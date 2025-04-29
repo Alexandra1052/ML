@@ -3,7 +3,6 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import LabelEncoder 
 import joblib
 
-# Citim CSV-ul
 data = pd.read_csv('data/medii_bucuresti.csv', delimiter=';')
 
 le = LabelEncoder()
@@ -13,7 +12,6 @@ X = data[['Profil_Code', 'Ultima_Medie']]
 
 y = data['Ultima_Medie']
 
-# Creăm și antrenăm modelul
 model = RandomForestRegressor(n_estimators=200, max_depth=10, random_state=42)
 model.fit(X, y)
 
